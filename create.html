@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html >
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<html ng-app='appHome'>
 
 <head>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+	<script src="createPage.js"></script>
+
 	<meta charset="utf-8">
 	<title>Бронирование мест в кинотеатре</title>
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 
-<body ng-controller="appController" >
+<body>
+
 	<header>
-		<div id=homeCreateAnAccount></div>
+		<a href="home.html">Вернуться на главную страницу</a>
 	</header>
-	<br id="createE-mail">
-		<input ng-model = "email"  type="text" placeholder="Email address" size="40">
-		<input ng-model = "pass" type="text" placeholder="Password" size="40">
-		<input ng-model = "passRetry" type="text" placeholder="Retry password" size="40">
-	</p></div>
-	<button ng-click = "buttonReg()" ng-value = "but" id="button">Создать аккаунт</button>
+
+	<div class="create" ng-controller="Create" ng-hide="check">
+		<h2>Cоздание учетной записи</h2>
+		<div class="createEmail">
+			<p><input ng-model ="email" type="text" placeholder="Логин" size="30" /><br /></p>
+			<p><input ng-model ="pass" type="password" placeholder="Пароль" size="30" /><br /></p>
+			<p><input ng-model ="passRetry" type="password" placeholder="Повторите пароль" size="30"><br /></p>
+			<center><button ng-click="btnCreate()" ng-value="btn" class="button_Create" ng-model="check">Создать аккаунт</button></center>
+		</div>
+	</div>
+
 </body>
 
 </html>

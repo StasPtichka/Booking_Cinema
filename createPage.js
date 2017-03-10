@@ -20,17 +20,27 @@ firebase.initializeApp(config);
 
 var appHome = angular.module('appHome', []);
 
-    appHome.controller('Entry', function ($scope) {
-        $scope.btnEntry = function () {
+    appHome.controller('Create', function ($scope) {
+        $scope.btnCreate = function () {
             email = $scope.email;
             pass = $scope.pass;
-            console.log(email, pass);
+            passRetry = $scope.passRetry;
             $scope.btn = '';
             $scope.pass = $scope.btn;
-            firebase.auth().signInWithEmailAndPassword(email, pass).catch(function (error) {
-                if (error.code) {
-                    alert(error.message)
-                }
-            });
+            $scope.passRetry = $scope.btn;
+            checked = false;
+            $scope.check = true;
+
+            if (pass !== passRetry) {
+                alert("Пароли не совпадают!!!")
+            } else {
+                firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function (error) {
+                    if (error.code) {
+                        alert(error.message);
+                    } else {
+                        alert("Регистрация аккаунта прошла успешно!!!")
+                    }
+                });
+            }
         }
     });
