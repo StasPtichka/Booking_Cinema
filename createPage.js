@@ -45,13 +45,14 @@ appCreate.controller('Create', function ($scope) {
                 }
             });
 
-            date_of_born = dateOfborn.toDateString();
-            var bookRef = firebase.database().ref("pasport/" + name);//тут вместо name будет id пользователя
+
+            var bookRef = firebase.database().ref("pasport/" + firebase.auth().currentUser.uid);//тут вместо name будет id пользователя
             bookRef.set(
                 {
                     Name: name,
                     Surname: surname,
-                    DOB: date_of_born
+                    DOB: dateOfborn.toDateString(),
+                    Mail_user: email
                 });
 
         }
