@@ -1,7 +1,6 @@
 <!DOCTYPE html >
 <html ng-app='appHome'>
 
-
 <head>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -15,23 +14,36 @@
 </head>
 
 <body>
-
-<div class="header">
-    <h1>BronKino</h1>
-    <h3>Бронирование мест в кинотеатре</h3>
-</div>
-
-<div class="login">
-    <div class="login_email_pass" ng-controller="Entry">
-        <h4>Вход</h4>
-        <p><input ng-model="email" type="text" placeholder="Логин" size="30"><br/></p>
-        <p><input ng-model="pass" type="password" placeholder="Пароль" size="30"></p>
-        <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
-        <a href="create.html">Создать аккаунт</a>
+    
+    <div class="header">
+        <h1>BronKino</h1>
+        <h3>Бронирование мест в кинотеатре</h3>
     </div>
-</div>
+    
+    <div class="content">
+        <div class="login">
+            <div class="login_email_pass" ng-controller="Entry">
+                <h4>Вход</h4>
+                <p><input ng-model="email" type="text" placeholder="Логин" size="30"><br/></p>
+                <p><input ng-model="pass" type="password" placeholder="Пароль" size="30"></p>
+                <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
+                <a href="create.html">Создать аккаунт</a>
+            </div>
+        </div>
+        
+        <div class="poster">
+            <a href="FilmsComments/logan.html"><img src="img/Logan.jpg"></a>
+            <a href="FilmsComments/split.html"><img src="img/Split.jpg"></a>
+            <a href="FilmsComments/rogueOne.html"><img src="img/RogueOne.jpg"></a>
+            <a href="FilmsComments/kong.html"><img src="img/Kong.jpg"></a>    
+        </div>
+    </div>
 
-<div ng-view></div>
+    <div ng-view></div>
+
+    <div class="footer" align="middle">
+        <p>vk.com/lenny_st<br>vk.com/polyansky_dmitry</p>     
+    </div>
 
 </body>
 
