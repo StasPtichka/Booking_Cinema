@@ -8,16 +8,18 @@ input {
 }
 
 .content {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 250px;
+    margin-right: 250px;
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .poster img {
     float: left;
     margin-left: 10px;
     margin-bottom: 10px;
-    border-radius: 10px
+    border-radius: 10px;
+    width: 204px;
 }
 
 .text {
@@ -29,14 +31,32 @@ input {
 	text-decoration: none;
 }
 
+.header button {
+    width: 120px;
+    float: right;
+    margin-right: 250px;
+    margin-top: 5px;
+}
+
+.header p2 {
+    width: 281px;
+    float: right;
+    margin-right: 250px;
+}
+
+.header p1 {
+    float: left;
+    margin-left: 250px;
+}
+
 .header h1, .header h3 {
+    width: 500px;
 	margin: 0px;
-	margin-left: 15%;
-    margin-right: 15%;
 	padding: 0px;
 }
 
 .header {
+    float: left;
 	position: fixed;
     width: 100%;
     left: 0; 
@@ -46,6 +66,7 @@ input {
 	padding-bottom: 20px;
 	padding-top: 10px;
     margin-top: 0px;
+    border-radius: 6px;
 }
 
 .footer {
@@ -64,6 +85,11 @@ input {
 	padding: 2px;
 }
 
+.table table tr td a {
+    text-decoration: none;
+    text-align: center;
+}
+
 .Reg {
 	float: right;
 	margin-left: 70%;
@@ -71,10 +97,13 @@ input {
 	padding-top: 30px;
 }
 
+/*
 .login {
-	float: right;
-	margin-right: 10px;
+    float: right;
+	margin-right: 10%;
     margin-bottom: 100%;
+    padding-left: auto;
+    padding-right: auto;
 	padding: 15px;
 	padding-top: 15px;
 	background-color: #a7b9c7;
@@ -96,6 +125,7 @@ input {
 .login_email_pass a {
 	text-decoration: none;
 }
+*/
 
 .button_Entry {
 	cursor: pointer;

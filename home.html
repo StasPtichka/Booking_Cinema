@@ -16,20 +16,29 @@
 <body>
     
     <div class="header">
-        <h1>BronKino</h1>
-        <h3>Бронирование мест в кинотеатре</h3>
+        <p1>
+            <h1>BronKino</h1>
+            <h3>Бронирование мест в кинотеатре</h3>
+        </p1>
+        <p2>
+            <input ng-model="email" type="text" placeholder="Логин" size="15">
+            <input ng-model="pass" type="password" placeholder="Пароль" size="15">
+        </p2>
+        <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
     </div>
     
     <div class="content">
+<!--
         <div class="login">
             <div class="login_email_pass" ng-controller="Entry">
                 <h4>Вход</h4>
-                <p><input ng-model="email" type="text" placeholder="Логин" size="30"><br/></p>
-                <p><input ng-model="pass" type="password" placeholder="Пароль" size="30"></p>
+                <p><input ng-model="email" type="text" placeholder="Логин"><br/></p>
+                <p><input ng-model="pass" type="password" placeholder="Пароль"></p>
                 <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
                 <a href="create.html">Создать аккаунт</a>
             </div>
         </div>
+-->
         
         <div class="poster">
             <a href="FilmsComments/logan.html"><img src="img/Logan.jpg"></a>
@@ -37,13 +46,31 @@
             <a href="FilmsComments/rogueOne.html"><img src="img/RogueOne.jpg"></a>
             <a href="FilmsComments/kong.html"><img src="img/Kong.jpg"></a>    
         </div>
+
+        <div class="table">
+            <table width="100%" border="10px" cellspacing="10">
+                <tr class="head">
+                    <th valign="middle">Зал для просмотра</th>
+                    <th valign="middle">Фильм</th>
+                </tr>
+                <tr class="result1">
+                    <td><a href="rooms/rooms1.html">Зал №1</a></td>
+                    <td>Конг</td>
+                </tr>
+                <tr class="result2">
+                    <td><a href="rooms/rooms2.html">Зал №2</a></td>
+                    <td>Логан</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
-
-    <div ng-view></div>
-
+   
     <div class="footer" align="middle">
         <p>vk.com/lenny_st<br>vk.com/polyansky_dmitry</p>     
     </div>
+
+    <div ng-view></div>
 
 </body>
 
