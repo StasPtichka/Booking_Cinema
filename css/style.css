@@ -8,18 +8,17 @@ input {
 }
 
 .content {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 100px;
     margin-bottom: 50px;
 }
 
 .poster img {
-    float: left;
     margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    width: 204px;
+    width: 189px;
 }
 
 .text {
@@ -32,25 +31,30 @@ input {
 }
 
 .header button {
-    width: 120px;
+    width: auto;
     float: right;
-    margin-right: 250px;
-    margin-top: 5px;
+    margin-left: 4px;
+}
+
+.header p3 {
+    width: auto;
+    float: right;
 }
 
 .header p2 {
-    width: 281px;
     float: right;
-    margin-right: 250px;
+}
+
+.header p2 a {
+    color: white;
 }
 
 .header p1 {
     float: left;
-    margin-left: 250px;
 }
 
 .header h1, .header h3 {
-    width: 500px;
+    width: 300px;
 	margin: 0px;
 	padding: 0px;
 }
@@ -59,14 +63,16 @@ input {
     float: left;
 	position: fixed;
     width: 100%;
-    left: 0; 
-    top: 0;
+    left: 0; top: 0;
     background-color: black;
 	color: white;
 	padding-bottom: 20px;
 	padding-top: 10px;
-    margin-top: 0px;
-    border-radius: 6px;
+}
+
+.header_log {
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .footer {
@@ -96,36 +102,6 @@ input {
 	margin-right: 20px;
 	padding-top: 30px;
 }
-
-/*
-.login {
-    float: right;
-	margin-right: 10%;
-    margin-bottom: 100%;
-    padding-left: auto;
-    padding-right: auto;
-	padding: 15px;
-	padding-top: 15px;
-	background-color: #a7b9c7;
-	border-radius: 10px;
-}
-
-.login h4 {
-	margin: 0px;
-	padding: 0px;
-	padding-bottom: 5px;
-	font: normal 130% 'centure gothic', arial;
-}
-
-.login_email_pass p {
-	margin: 0px;
-	padding-bottom: 10px;
-}
-
-.login_email_pass a {
-	text-decoration: none;
-}
-*/
 
 .button_Entry {
 	cursor: pointer;
@@ -165,4 +141,17 @@ input {
 .createEmail a {
 	text-decoration: none;
 	color: black;
+}
+
+.table_films {
+    margin-top: 300px;
+}
+
+.result_rooms_1 button, .result_rooms_2  button, .result_rooms_3 button {
+    width: 100%;
+    height: 100%;
+}
+
+.head {
+    font: normal 150% 'centure gothic', arial;
 }

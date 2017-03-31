@@ -21,6 +21,13 @@ firebase.initializeApp(config);
 var appHome = angular.module('appHome', []);
 
 appHome.controller('Entry', function ($scope) {
+    
+    $scope.check = false;
+    
+    $scope.btnSign = function () {
+        $scope.check = true;
+    }
+    
     $scope.btnEntry = function () {
         email = $scope.email;
         pass = $scope.pass;

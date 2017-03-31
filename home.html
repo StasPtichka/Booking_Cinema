@@ -16,29 +16,23 @@
 <body>
     
     <div class="header">
-        <p1>
-            <h1>BronKino</h1>
-            <h3>Бронирование мест в кинотеатре</h3>
-        </p1>
-        <p2>
-            <input ng-model="email" type="text" placeholder="Логин" size="15">
-            <input ng-model="pass" type="password" placeholder="Пароль" size="15">
-        </p2>
-        <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
+        <div class="header_log" ng-controller="Entry">
+            <p1>
+                <h1>BronKino</h1>
+                <h3>Бронирование мест в кинотеатре</h3>
+            </p1>
+            <p2 ng-hide="check">
+                <a href="#" ng-click="btnSign()" ng-model="check" class="button_Sign">Вход</a> | <a href="create.html">Регистрация</a>
+            </p2>
+            <p3 ng-show="check">
+                <input ng-model="email" type="text" placeholder="Логин" size="15">
+                <input ng-model="pass" type="password" placeholder="Пароль" size="15">
+                <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
+            </p3>
+        </div>
     </div>
     
     <div class="content">
-<!--
-        <div class="login">
-            <div class="login_email_pass" ng-controller="Entry">
-                <h4>Вход</h4>
-                <p><input ng-model="email" type="text" placeholder="Логин"><br/></p>
-                <p><input ng-model="pass" type="password" placeholder="Пароль"></p>
-                <button ng-click="btnEntry()" ng-value="btn" class="button_Entry">Войти</button>
-                <a href="create.html">Создать аккаунт</a>
-            </div>
-        </div>
--->
         
         <div class="poster">
             <a href="FilmsComments/logan.html"><img src="img/Logan.jpg"></a>
@@ -47,7 +41,7 @@
             <a href="FilmsComments/kong.html"><img src="img/Kong.jpg"></a>    
         </div>
 
-        <div class="table">
+        <div class="table_films">
             <table width="100%" border="10px" cellspacing="10">
                 <tr class="head">
                     <th valign="middle">Зал для просмотра</th>

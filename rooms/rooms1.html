@@ -1,61 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="book">
-<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">
-</script>
-<script src="scriptBook.js"></script>
-<head>
+<html lang="ru" ng-app="book">
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">
+    </script>
+    <script src="scriptBook.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
+<head>
     <meta charset="UTF-8">
     <title>Бронирование</title>
 </head>
+
 <body ng-controller="appController">
-<div >
-    <input type="text" ng-model="mail">
-    <button class="Ok" ng-value="ok" ng-click="OK()">Okay</button>
-<div >
-    <!--input здесь просто для удобства, в действительности будет браться мыло под которым зашли, button это места -->
-        <button class="one" ng-value="one" ng-click="click1()"> 1</button>
-        <button class="two" ng-value="two" ng-click="click2()">2</button>
-        <button class="three" ng-value="three" ng-click="click3()">3</button>
-        <button class="four" ng-value="four" ng-click="click4()">4</button>
-        <button class="five" ng-value="five" ng-click="click5()">5</button>
-        <button class="six" ng-value="six" ng-click="click6()">6</button>
-        <button class="seven" ng-value="seven" ng-click="click7()">7</button>
-        <button class="eight" ng-value="eight" ng-click="click8()">8</button>
-        <button class="nine" ng-value="nine" ng-click="click9()">9</button>
-        <button class="ten" ng-value="ten" ng-click="click10()">10</button>
-</div>
-<div >
-        <!--input здесь просто для удобства, в действительности будет браться мыло под которым зашли, button это места -->
-        <button class="eleven" ng-value="eleven" ng-click="click11()"> 11</button>
-        <button class="twelve" ng-value="twelve" ng-click="click12()">12</button>
-        <button class="thirteen " ng-value="thirteen " ng-click="click13()">13</button>
-        <button class="thirteen " ng-value="thirteen " ng-click="click14()">14</button>
-        <button class="fifteen" ng-value="fifteen" ng-click="click15()">15</button>
-        <button class="sixteen" ng-value="sixteen" ng-click="click16()">16</button>
-        <button class="seventeen" ng-value="seventeen" ng-click="click17()">17</button>
-        <button class="eighteen" ng-value="eighteen" ng-click="click18()">18</button>
-        <button class="nineteen" ng-value="nineteen" ng-click="click19()">19</button>
-        <button class="twenty" ng-value="twenty" ng-click="click20()">20</button>
-</div>
-<div >
-        <!--input здесь просто для удобства, в действительности будет браться мыло под которым зашли, button это места -->
-        <button class="twentyone" ng-value="twentyone" ng-click="click21()"> 21</button>
-        <button class="twentytwo" ng-value="twentytwo" ng-click="click22()">22</button>
-        <button class="twentythree" ng-value="twentythree" ng-click="click23()">23</button>
-        <button class="twentyfour" ng-value="twentyfour" ng-click="click24()">24</button>
-        <button class="twentyfive" ng-value="twentyfive" ng-click="click25()">25</button>
-        <button class="twentysix" ng-value="twentysix" ng-click="click26()">26</button>
-        <button class="twentyseven" ng-value="twentyseven" ng-click="click27()">27</button>
-        <button class="twentyeight" ng-value="twentyeight" ng-click="click28()">28</button>
-        <button class="twentynine" ng-value="twentynine" ng-click="click29()">29</button>
-        <button class="thirty" ng-value="thirty" ng-click="click30()">30</button>
-</div>
 
-</div>
+    <div class="header">
+        <h1>BronKino</h1>
+        <h3>Бронирование мест в кинотеатре</h3>
+    </div>
 
+<!--
+    <div >
+        <input type="text" ng-model="mail">
+        <button class="Ok" ng-value="ok" ng-click="OK()">Okay</button>
+        <div>
+                <button class="one" ng-value="one" ng-click="click1()"> 1</button>
+                <button class="two" ng-value="two" ng-click="click2()">2</button>
+                <button class="three" ng-value="three" ng-click="click3()">3</button>
+                <button class="four" ng-value="four" ng-click="click4()">4</button>
+                <button class="five" ng-value="five" ng-click="click5()">5</button>
+                <button class="six" ng-value="six" ng-click="click6()">6</button>
+                <button class="seven" ng-value="seven" ng-click="click7()">7</button>
+                <button class="eight" ng-value="eight" ng-click="click8()">8</button>
+                <button class="nine" ng-value="nine" ng-click="click9()">9</button>
+                <button class="ten" ng-value="ten" ng-click="click10()">10</button>
+        </div>
+        <div >
+                <button class="eleven" ng-value="eleven" ng-click="click11()"> 11</button>
+                <button class="twelve" ng-value="twelve" ng-click="click12()">12</button>
+                <button class="thirteen " ng-value="thirteen " ng-click="click13()">13</button>
+                <button class="thirteen " ng-value="thirteen " ng-click="click14()">14</button>
+                <button class="fifteen" ng-value="fifteen" ng-click="click15()">15</button>
+                <button class="sixteen" ng-value="sixteen" ng-click="click16()">16</button>
+                <button class="seventeen" ng-value="seventeen" ng-click="click17()">17</button>
+                <button class="eighteen" ng-value="eighteen" ng-click="click18()">18</button>
+                <button class="nineteen" ng-value="nineteen" ng-click="click19()">19</button>
+                <button class="twenty" ng-value="twenty" ng-click="click20()">20</button>
+        </div>
+        <div >
+                <button class="twentyone" ng-value="twentyone" ng-click="click21()"> 21</button>
+                <button class="twentytwo" ng-value="twentytwo" ng-click="click22()">22</button>
+                <button class="twentythree" ng-value="twentythree" ng-click="click23()">23</button>
+                <button class="twentyfour" ng-value="twentyfour" ng-click="click24()">24</button>
+                <button class="twentyfive" ng-value="twentyfive" ng-click="click25()">25</button>
+                <button class="twentysix" ng-value="twentysix" ng-click="click26()">26</button>
+                <button class="twentyseven" ng-value="twentyseven" ng-click="click27()">27</button>
+                <button class="twentyeight" ng-value="twentyeight" ng-click="click28()">28</button>
+                <button class="twentynine" ng-value="twentynine" ng-click="click29()">29</button>
+                <button class="thirty" ng-value="thirty" ng-click="click30()">30</button>
+        </div>
+    </div>
+-->
 
-
+    
+    <div class="table_rooms1">
+       <center> 
+       <table width="50%" border="15px" cellspacing="10">
+            <tr class="head">
+                <th colspan="10"><b><i>Зал №1</i></b></th>
+            </tr>
+            <tr class="result_rooms_1">
+                <td><button ng-click="click1()">1</button></td>
+                <td><button ng-click="click2()">2</button></td>
+                <td><button ng-click="click3()">3</button></td>
+                <td><button ng-click="click4()">4</button></td>
+                <td><button ng-click="click5()">5</button></td>
+                <td><button ng-click="click6()">6</button></td>
+                <td><button ng-click="click7()">7</button></td>
+                <td><button ng-click="click8()">8</button></td>
+                <td><button ng-click="click9()">9</button></td>
+                <td><button ng-click="click10()">10</button></td>
+            </tr>
+            <tr class="result_rooms_2">
+                <td><button ng-click="click11()">11</button></td>
+                <td><button ng-click="click12()">12</button></td>
+                <td><button ng-click="click13()">13</button></td>
+                <td><button ng-click="click14()">14</button></td>
+                <td><button ng-click="click15()">15</button></td>
+                <td><button ng-click="click16()">16</button></td>
+                <td><button ng-click="click17()">17</button></td>
+                <td><button ng-click="click18()">18</button></td>
+                <td><button ng-click="click19()">19</button></td>
+                <td><button ng-click="click20()">20</button></td>
+            </tr>
+            <tr class="result_rooms_3">
+                <td><button ng-click="click21()">21</button></td>
+                <td><button ng-click="click22()">22</button></td>
+                <td><button ng-click="click23()">23</button></td>
+                <td><button ng-click="click24()">24</button></td>
+                <td><button ng-click="click25()">25</button></td>
+                <td><button ng-click="click26()">26</button></td>
+                <td><button ng-click="click27()">27</button></td>
+                <td><button ng-click="click28()">28</button></td>
+                <td><button ng-click="click29()">29</button></td>
+                <td><button ng-click="click30()">30</button></td>
+            </tr>
+        </table>
+        </center>
+    </div>
+    
 </body>
+
 </html>
